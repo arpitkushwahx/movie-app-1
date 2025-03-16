@@ -8,9 +8,7 @@ function Search() {
 
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate("/Details/:id");
-  };
+ 
 
   return (
     <div>

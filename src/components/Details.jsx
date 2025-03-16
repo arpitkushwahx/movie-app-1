@@ -114,7 +114,7 @@ function Details() {
             ) : (
               <p>Loading...</p>
             )}
-            <div className="px-5 ml-10 w-auto h-auto rounded-xl shadow-md shadow-black">
+            <div className="px-5 ml-10 w-auto h-auto rounded-xl shadow-md shadow-black bg-black opacity-50">
               <h1 className="text-4xl font-bold ">
                 {imageID.title || imageID.original_name}
               </h1>
@@ -127,7 +127,7 @@ function Details() {
                     <span>Runtime: </span>
                     {movieInfo.runtime} min
                   </p>
-                  <p>Release Data: {imageID.release_date}</p>
+                  <p>Release Date: {imageID.release_date}</p>
 
                   {movieInfo && (
                     <>

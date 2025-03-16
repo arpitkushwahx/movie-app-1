@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Contact() {
   const [data, setData] = useState({
@@ -100,10 +101,28 @@ function Contact() {
             <p>+91 896 689 2731</p>
             <p>arpitkushwah2101@gmail.com</p>
             <div className="grid grid-cols-4 p-2 w-40">
-              <button className="hover:translate-0.5 duration-200"><i class="fa-brands fa-instagram fa-xl"></i></button>
-              <button className="hover:translate-0.5 duration-200"><i class="fa-brands fa-facebook fa-xl"></i></button>
-              <button className="hover:translate-0.5 duration-200"><i class="fa-brands fa-github fa-xl"></i></button>
-              <button className="hover:translate-0.5 duration-200"><i class="fa-brands fa-linkedin fa-xl"></i></button>
+              <Link to="https://www.instagram.com/arpitkushwahx/">
+                <button className="hover:translate-0.5 duration-200 cursor-pointer">
+                  <i class="fa-brands fa-instagram fa-xl"></i>
+                </button>
+              </Link>
+              <Link>
+                {" "}
+                <button className="hover:translate-0.5 duration-200 cursor-pointer">
+                  <i class="fa-brands fa-facebook fa-xl"></i>
+                </button>
+              </Link>
+              <Link to="https://github.com/arpitkushwahx">
+                <button className="hover:translate-0.5 duration-200 cursor-pointer">
+                  <i class="fa-brands fa-github fa-xl"></i>
+                </button>
+              </Link>
+              <Link>
+                {" "}
+                <button className="hover:translate-0.5 duration-200 cursor-pointer">
+                  <i class="fa-brands fa-linkedin fa-xl"></i>
+                </button>
+              </Link>
             </div>
           </div>
         </div>

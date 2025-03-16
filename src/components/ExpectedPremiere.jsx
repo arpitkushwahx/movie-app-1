@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { MovieContext } from "../context/MovieContextProvider";
+import { Link } from "react-router-dom";
 function ExpectedPremiere() {
   const { data, imagePath } = useContext(MovieContext);
 
@@ -8,19 +9,18 @@ function ExpectedPremiere() {
       <div className="px-28 pt-20">
         <div className="text-white flex flex-row justify-between">
           <h1 className="text-4xl">Expected Premiere</h1>
-          <span>L</span>
-          <span>R</span>
+          
         </div>
         <div className="grid grid-cols-6">
-          {data.slice(0, 6).map((e) => (
+          {data.slice(12,18).map((e) => (
             <div className="p-4" key={e.id}>
-              <img
+             <Link to={`/Details/${e.id}`}> <img
                 src={imagePath + e.poster_path}
-                className="bg-blue-500 h-80 w-56 rounded-lg"
+                className="rounded-lg h-80 w-56 hover:opacity-60 duration-200 border-2 border-red-400 hover:shadow-amber-300 shadow-md hover:-translate-y-1 "
                 alt="image"
-              />
+              /></Link>
               <h1 className="text-white"> {e.original_title}</h1>
-              <h2 className="text-red-800">{e.release_date}</h2>
+              <p className="text-amber-300">{e.release_date}</p>
             </div>
           ))}
         </div>

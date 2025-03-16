@@ -14,7 +14,7 @@ function Navbar() {
   useEffect(() => {
     
       setQuery(data);
-      navigate("/Search");
+      data?navigate("/Search"):navigate("/")
     
   }, [data]);
 
@@ -43,27 +43,27 @@ function Navbar() {
                 <h1>Home</h1>
               </NavLink>
 
-              <div class="relative group">
-                <div class="hover:bg-gray-700 p-2 rounded-md cursor-pointer">
-                  Catalog
+              <div className="relative group hover:text-orange-700">
+                <div className="  rounded-md cursor-pointer">
+                  Pages
                 </div>
-                <div class="absolute hidden bg-gray-800 text-white  rounded-md group-hover:block w-48 ">
-                  <a href="#" class="block   hover:bg-gray-600">
-                    Web Development
+                <div className="absolute hidden bg-gray-800 text-white  rounded-md group-hover:block w-48 ">
+                  <Link to="/AboutUs" className="block  py-2 px-4 hover:bg-gray-600">
+                   About Us
+                  </Link>
+                  <a href="#" className="block py-2 px-4 hover:bg-gray-600">
+                    Contact Us
                   </a>
-                  <a href="#" class="block py-2 px-4 hover:bg-gray-600">
-                    Mobile Development
-                  </a>
-                  <a href="#" class="block py-2 px-4 hover:bg-gray-600">
-                    Design
+                  <a href="#" className="block py-2 px-4 hover:bg-gray-600">
+                    Home
                   </a>
                 </div>
               </div>
 
               <h1>Pricing plan</h1>
-              <h1>Pages</h1>
+              <h1>Catalog</h1>
             </div>
-            <span className="ml-10 font-extrabold">...</span>
+            
           </div>
           <div>
             <input
@@ -71,10 +71,11 @@ function Navbar() {
               placeholder="search movie..."
               value={data}
               onChange={(e) => setData(e.target.value)}
+              className="text-center rounded-xl h-7 w-48"
             />
 
             <span>
-              <button  className="ml-3 cursor-pointer">
+              <button  className="ml-3 cursor-pointer hover:text-red-400">
                 <i class="fa-solid fa-magnifying-glass fa-lg"></i>
               </button>
             </span>

@@ -6,10 +6,7 @@ function NewItems() {
   const navigate = useNavigate();
   const { data } = useContext(MovieContext);
   const imagePath = "https://image.tmdb.org/t/p/w1280";
-
-  //   const handleNavigate =()=>{
-  //     navigate("/Details/${e.id}")
-  //   }
+ 
   return (
     <div>
       <div className="pt-36 pb-24 px-28">
@@ -17,8 +14,14 @@ function NewItems() {
           <h1 className="text-4xl">
             <span className="font-bold">NEW ITEMS</span> OF THIS SEASON
           </h1>
-          <span>L</span>
-          <span>R</span>
+          {/* <div className="mr-5">
+            <button className="cursor-pointer mr-5">
+              <i class="fa-solid fa-left-long fa-2xl"></i>
+            </button>
+            <button className="cursor-pointer">
+              <i class="fa-solid fa-right-long fa-2xl"></i>
+            </button>
+          </div> */}
         </div>
         <div className="grid grid-cols-5 ">
           {data.slice(0, 5).map((e) => (
@@ -33,12 +36,12 @@ function NewItems() {
                   />
                 </Link>
               </div>
-              <div className="pt-2">
-                <h1 className="text-white text-2xl text-nowrap">
+              <div className="">
+                <h1 className="text-white text-xl text-wrap font-medium">
                   {" "}
                   {e.original_title}
                 </h1>
-                <h2 className="text-yellow-500">{e.release_date}</h2>
+                <p className="text-yellow-500">{e.release_date}</p>
               </div>
             </div>
           ))}
