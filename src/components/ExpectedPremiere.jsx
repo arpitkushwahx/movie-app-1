@@ -8,7 +8,7 @@ function ExpectedPremiere() {
     <div>
       <div className="px-28 pt-20 ">
         <div className="text-white flex flex-row justify-between">
-          <h1 className="text-4xl">Expected Premieree</h1>
+          <h1 className="text-4xl">Expected Premiere</h1>
           
         </div>
         <div className="grid xl:grid-cols-6 grid-cols-1 xs:grid-cols-1 md:grid-cols-3 max-w-full">
