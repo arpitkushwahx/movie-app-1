@@ -22,7 +22,7 @@ function Search() {
                   navigate(`/Details/${e.id}`);
                 }}
                 alt="image"
-                className="rounded-lg"
+                className="rounded-lg hover:shadow-md hover:shadow-amber-300 hover:opacity-50 hover:-translate-y-1 duration-200 cursor-pointer border-2 border-red-700"
               />
               <p>{e.title}</p>
             </div>

@@ -4,7 +4,7 @@ import { MovieContext } from "../context/MovieContextProvider";
 
 function Details() {
   const { id } = useParams();
-  const { data, trending, tv, API_KEY, imagePath, searchInfo, noImageIcon } =
+  const { data, trending, tv, API_KEY, imagePath, searchInfo } =
     useContext(MovieContext);
   const [movieKey, setMovieKey] = useState("");
   const [tvKey, setTvKey] = useState("");
@@ -18,49 +18,54 @@ function Details() {
     const selectedMovie = [...data, ...trending, ...tv, ...searchInfo].find(
       (movie) => movie.id === Number(id)
     );
-    setImageID(selectedMovie); // Set the selected movie object
-  }, [id, data, trending, tv, searchInfo]);
+    if (selectedMovie) {
+      setImageID(selectedMovie); // Set the selected movie object
+    }
+  }, []);
 
   useEffect(() => {
+    if (!imageID) return;
     const fetchMovieKey = async (movieID) => {
       try {
         const res = await fetch(
           `https://api.themoviedb.org/3/movie/${movieID}/videos?api_key=${API_KEY}`
-          //https://api.themoviedb.org/3//tv/:series_id/videos?language=en-US
         );
 
-        if (!res) {
-          throw new Error("unable to fetch trendinng movie");
+        if (!res.ok) {
+          throw new Error("unable to fetch Movie key");
         }
-        const trendingInfo = await res.json();
-        if (trendingInfo) {
-          setMovieKey(trendingInfo.results[0].key);
-          console.log(trendingInfo);
+        console.log("movieKeyRes", res);
+
+        const movieKeyInfo = await res.json();
+        console.log("movieKeyInfo", movieKeyInfo);
+        if (movieKeyInfo.results.length > 0 ) {
+          setMovieKey(movieKeyInfo.results[0].key);
+          console.log("movieKeyInfo", movieKeyInfo);
         } else {
-          setMovieKey("");
+          setMovieKey(null);
         }
       } catch (error) {
         console.error("error:", error);
       }
     };
+
     fetchMovieKey(imageID.id);
-  }, [imageID]);
+  }, [imageID, API_KEY]);
 
   useEffect(() => {
     const fetchTvKey = async (movieID) => {
       try {
         const res = await fetch(
           `https://api.themoviedb.org/3/tv/${movieID}/videos?api_key=${API_KEY}`
-          //https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${search_term}
         );
 
-        if (!res) {
-          throw new Error("unable to fetch trendinng movie");
+        if (!res.ok) {
+          throw new Error("unable to fetch TV key");
         }
-        const trendingInfo = await res.json();
-        if (trendingInfo) {
-          setTvKey(trendingInfo.results[0].key);
-          console.log(trendingInfo);
+        const tvInfo = await res.json();
+        if (tvInfo) {
+          setTvKey(tvInfo.results[0].key);
+          console.log(tvInfo);
         } else {
           setTvKey("");
         }
@@ -78,8 +83,8 @@ function Details() {
           `https://api.themoviedb.org/3/movie/${movieID}?api_key=${API_KEY}`
         );
 
-        if (!res) {
-          throw new Error("unable to fetch trendinng movie");
+        if (!res.ok) {
+          throw new Error("unable to fetch movie info");
         }
         const movieInfo = await res.json();
         if (movieInfo) {
@@ -93,7 +98,7 @@ function Details() {
       }
     };
     fetchMovieInfo(id);
-  }, []);
+  }, [imageID]);
 
   return (
     <div>
@@ -136,25 +141,21 @@ function Details() {
                       </p>
                       <p>
                         Language:{" "}
-                        {movieInfo.spoken_languages.length === 0
-                          ? "english"
+                        {!movieInfo.spoken_languages.length > 0
+                          ? "English"
                           : movieInfo.spoken_languages[0].english_name}
                       </p>
                       <p>
                         Country:{" "}
-                        {movieInfo.production_countries.length === 0
+                        {!movieInfo.production_countries.length > 0
                           ? ""
                           : movieInfo.production_countries[0].name}
                       </p>
                       <p>
                         Genre:{" "}
-                        {movieInfo.genres.length === 0
+                        {!movieInfo.genres.length > 0
                           ? ""
                           : movieInfo.genres[0].name}
-                        ,{" "}
-                        {/* {movieInfo.genres.length === 0
-                          ? ""
-                          : movieInfo.genres[1].name} */}
                       </p>
                     </>
                   )}
@@ -165,15 +166,28 @@ function Details() {
               )}
             </div>
           </div>
-          <div className="ml-36">
-            <iframe
-              className="rounded-lg border-2 border-amber-300 mt-48 "
-              width="560"
-              height="315"
-              src={`https://www.youtube.com/embed/${movieKey || tvKey}`}
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+          <div className="ml-36 mt-48">
+            {movieKey&& !movieKey.match(/^[0-9]+$/) || tvKey ? (
+              <iframe
+                className="rounded-lg border-2 border-amber-300  "
+                width="560"
+                height="350"
+                src={`https://www.youtube.com/embed/${
+                  movieKey || tvKey 
+                }`}
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            ) : (
+              <iframe
+                className="rounded-lg border-2 border-amber-300  "
+                width="560"
+                height="350"
+                src="https://www.youtube.com/embed/CevxZvSJLk8?list=RDCevxZvSJLk8"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            )}
           </div>
         </div>
       </div>

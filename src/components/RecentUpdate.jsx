@@ -43,27 +43,27 @@ function RecentUpdate() {
 
   return (
     <div>
-      <div className="border-b-2 border-b-gray-800 px-32 ">
+      <div className="border-b-2 border-b-gray-800 px:20 md:px-32 ">
         <div className="text-white">
-          <h1 className="text-4xl text-white ">Recently Updated</h1>
-          <div className="my-7 flex flex-row gap-7 justify-items-start">
+          <h1 className="text-3xl text-nowrap md:text-4xl text-white ">Recently Updated</h1>
+          <div className="my-7 flex flex-row gap-1 md:gap-7 justify-items-start">
             <button
               onClick={handleMovie}
-              className=" hover:text-amber-300 hover:border-b-2 h-10 w-20 hover:border-amber-300 hover:shadow-xs hover:shadow-amber-300 rounded-lg duration-100"
+              className="text-sm hover:text-amber-300 hover:border-b-2 h-10 w-20 hover:border-amber-300 hover:shadow-xs hover:shadow-amber-300 rounded-lg duration-100"
             >
               MOVIES
             </button>
 
             <button
               onClick={handleNewMovieItem}
-              className=" hover:text-amber-300 hover:border-b-2 h-10 w-24 hover:border-amber-300 hover:shadow-xs hover:shadow-amber-300 rounded-lg duration-100"
+              className="text-sm hover:text-amber-300 hover:border-b-2 h-10 w-24 hover:border-amber-300 hover:shadow-xs hover:shadow-amber-300 rounded-lg duration-100"
             >
               NEW ITEMS
             </button>
 
             <button
               onClick={handleTvItem}
-              className=" hover:text-amber-300 hover:border-b-2 h-10 w-24 hover:border-amber-300 hover:shadow-xs hover:shadow-amber-300 rounded-lg duration-100"
+              className="text-sm hover:text-amber-300 hover:border-b-2 h-10 w-24 hover:border-amber-300 hover:shadow-xs hover:shadow-amber-300 rounded-lg duration-100"
             >
               TV SHOWS
             </button>

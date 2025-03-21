@@ -7,13 +7,13 @@ function PrivacyPolicy() {
   const [poster, setPoster] = useState("");
   const [count, setCount] = useState(0);
 
-  const arr = data.slice(5, 11).map((e) => e.poster_path);
-  console.log("array of 5 images from api", arr);
+  // const arr = data.slice(5, 11).map((e) => e.poster_path);
+  // console.log("array of 5 images from api", arr);
 
-  const handleChange = () => {
-    setPoster(arr[count]);
-    setCount((prev) => (prev + 1 ) % arr.length);
-  };
+  // const handleChange = () => {
+  //   setPoster(arr[count]);
+  //   setCount((prev) => (prev + 1 ) % arr.length);
+  // };
 
   return (
     <div>
@@ -35,7 +35,7 @@ function PrivacyPolicy() {
             Ipsum as their default model text, and a search for 'lorem ipsum'
             will uncover many web sites still in their infancy. Various versions
             have evolved over the years, sometimes by accident, sometimes on
-            purpose (injected humour and the like).
+            purpose .
           </p>
           <br />
           <p>
@@ -49,7 +49,7 @@ function PrivacyPolicy() {
           </p>
         </div>
 
-        <div>
+        {/* <div>
           <h1>slider</h1>
           <button
             onClick={handleChange}
@@ -58,7 +58,7 @@ function PrivacyPolicy() {
             next
           </button>
           <img src={imagePath + poster} alt="image" className="h-50 w-50" />
-        </div>
+        </div> */}
       </div>
     </div>
   );

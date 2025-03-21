@@ -89,7 +89,7 @@ const MovieContextProvider = ({ children }) => {
         );
         console.log(res);
 
-        if (!res) {
+        if (!res.ok) {
           throw new Error("unable to fetch trendinng movie");
         }
         const info = await res.json();

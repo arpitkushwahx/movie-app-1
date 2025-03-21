@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { MovieContext } from "../context/MovieContextProvider";
 
 function Movie({ data }) {
-  const imagePath = "https://image.tmdb.org/t/p/w1280";
+  const {imagePath}=useContext(MovieContext)
   console.log(data);
   
   return (
     <div>
-      <div className="text-white grid grid-cols-6  gap-5">
+      <div className="text-white grid xl:grid-cols-6 grid-cols-2 md:grid-cols-3 gap-5">
         {data.slice(0,18).map((e) => (
           <div key={e.id} >
             {/* <p>{e.vote_average}</p> */}
@@ -17,7 +18,7 @@ function Movie({ data }) {
               <img
                 src={imagePath + e.poster_path}
                 alt="image"
-                className="rounded-lg h-80 w-56 hover:opacity-60 duration-200 border-2 border-red-400 hover:shadow-amber-300 shadow-md hover:-translate-y-1 "
+                className="rounded-lg h-80 w-56 hover:opacity-60 duration-200 border-2 border-red-400 hover:shadow-amber-300 shadow-md hover:-translate-y-1  "
               />
             </Link>
             <div className="">

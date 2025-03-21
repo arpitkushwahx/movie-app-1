@@ -9,19 +9,36 @@ function Contact() {
     message: "",
   });
 
+  const [submitStatus, setSubmitStatus] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setData({ ...data, [name]: value });
   };
 
+  
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (Object.keys(data).length !== 0) {
-      console.log("form submitted successfully");
-    } else {
-      console.log("fields required");
-    }
+      if (isLoading) return
+      setIsLoading(true)
+      setSubmitStatus("Loading...")
+    
+    setTimeout(() => {
+      
+      if (data.firstName && data.lastName && data.message) {
+        setSubmitStatus("Form submitted successfull ✅")
+        console.log("form submitted successfully ");
+      } else {
+        setSubmitStatus("All fields required")
+        console.log("fields required");
+      }
+      setIsLoading(false)
+    }, 2000);
   };
+
+  
   return (
     <div>
       <div className="h-auto">
@@ -31,36 +48,39 @@ function Contact() {
 
         {/* form */}
 
-        <div className=" FORM text-white grid grid-cols-2 my-20 mb-28 mx-20">
+        <div className=" FORM text-white grid grid-cols-1 xl:grid-cols-2 md:grid-cols-2 my-20 mb-28 mx-20 gap-5">
           <div>
+            <div className="ml-40">{submitStatus}</div>
             <h1>Contact Form</h1>
-            <div className="border-2 h-auto p-5 border-gray-800 rounded-2xl mr-5">
+            <div className="border-2 h-auto p-5 border-gray-800 rounded-2xl mr-5 xl:w-full md:max-w-auto sm:max-w-auto w-xs">
               <form onSubmit={handleSubmit}>
-                <div className=" p-5 flex items-center justify-evenly px-5">
-                  <label htmlFor="firseName">Name</label>
+                <div className=" p-5 flex flex-col sm:flex-col md:flex-col xl:flex-row  items-center justify-evenly px-5 ">
+                  <label htmlFor="firseName" className="font-medium">Name</label>
                   <br />
                   <input
                     name="firstName"
                     value={data.firstName}
-                    className="border-2 border-gray-800 rounded-lg "
+                    className="border-2 border-gray-800 rounded-lg px-2"
                     type="text"
+                    placeholder="first name"
                     onChange={handleChange}
                     required
                   />
 
-                  <label htmlFor="#">Last Name</label>
+                  <label htmlFor="#" className="font-medium">Last Name</label>
                   <br />
                   <input
                     name="lastName"
                     value={data.lastName}
-                    className="border-2 border-gray-800 rounded-lg"
+                    className="border-2 border-gray-800 rounded-lg px-2"
                     type="text"
+                    placeholder="last name"
                     onChange={handleChange}
                     required
                   />
                 </div>
                 <div className="mt-10">
-                  <label htmlFor="#">
+                  <label htmlFor="#" className="font-medium ">
                     Subject <span>(Optional)</span>
                   </label>
                   <br />
@@ -69,58 +89,59 @@ function Contact() {
                     value={data.subject}
                     type="text"
                     onChange={handleChange}
-                    className="w-xl rounded-lg border-2 h-20 border-gray-800 ml-5 mt-2"
+                    className="xl:w-xl rounded-lg border-2 h-20 border-gray-800 ml-5 mt-2 w-auto"
                   />
                 </div>
                 <div className="mt-10">
-                  <label htmlFor="#">Message</label>
+                  <label htmlFor="#" className="font-medium">Message</label>
                   <br />
                   <input
                     name="message"
                     value={data.message}
                     type="text"
+                    placeholder="Type your message..."
                     onChange={handleChange}
-                    className="w-xl rounded-lg border-2 h-20 border-gray-800 ml-5 mt-2"
+                    className="xl:w-xl w-auto rounded-lg border-2 h-20 border-gray-800 ml-5 mt-2 px-2"
                     required
                   />
                 </div>
-                <button className="w-lg h-10 rounded-lg ml-11 mt-5 hover:border-b-2 hover:border-b-amber-300 hover:shadow-sm hover:shadow-amber-300  rounded-b-lg duration-100">
-                  Submit
+                <button className="lg:w-full w-40 h-10  rounded-lg ml-11 mt-5 hover:border-b-2 hover:border-b-amber-300 hover:shadow-sm hover:shadow-amber-300  rounded-b-lg duration-100">
+                  {isLoading?"Submitting...":"Submit"}
                 </button>
               </form>
             </div>
           </div>
 
           <div className="w-96">
-            <h1>Get in Touch</h1>
+            <h1 className="font-bold text-xl">Get in Touch</h1>
             <p className="text-wrap">
               We are always happy to help and provide more information about our
               services. You can contact us through email, phone, or by filling
               out the form on our website. Thank you for considering us!
             </p>
-            <p>+91 896 689 2731</p>
-            <p>arpitkushwah2101@gmail.com</p>
+            <p>+91 896 589 2731</p>
+            <p className="font-medium">arpitkushwah2101@gmail.com</p>
             <div className="grid grid-cols-4 p-2 w-40">
               <Link to="https://www.instagram.com/arpitkushwahx/">
                 <button className="hover:translate-0.5 duration-200 cursor-pointer">
-                  <i class="fa-brands fa-instagram fa-xl"></i>
+                  <i className="fa-brands fa-instagram fa-xl"></i>
                 </button>
               </Link>
               <Link>
                 {" "}
                 <button className="hover:translate-0.5 duration-200 cursor-pointer">
-                  <i class="fa-brands fa-facebook fa-xl"></i>
+                  <i className="fa-brands fa-facebook fa-xl"></i>
                 </button>
               </Link>
               <Link to="https://github.com/arpitkushwahx">
                 <button className="hover:translate-0.5 duration-200 cursor-pointer">
-                  <i class="fa-brands fa-github fa-xl"></i>
+                  <i className="fa-brands fa-github fa-xl"></i>
                 </button>
               </Link>
               <Link>
                 {" "}
                 <button className="hover:translate-0.5 duration-200 cursor-pointer">
-                  <i class="fa-brands fa-linkedin fa-xl"></i>
+                  <i className="fa-brands fa-linkedin fa-xl"></i>
                 </button>
               </Link>
             </div>
