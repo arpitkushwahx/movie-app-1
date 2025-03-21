@@ -38,7 +38,7 @@ function Details() {
 
         const movieKeyInfo = await res.json();
         console.log("movieKeyInfo", movieKeyInfo);
-        if (movieKeyInfo.results.length > 0 ) {
+        if (movieKeyInfo.results.length > 0) {
           setMovieKey(movieKeyInfo.results[0].key);
           console.log("movieKeyInfo", movieKeyInfo);
         } else {
@@ -103,24 +103,27 @@ function Details() {
   return (
     <div>
       <div
-        className="h-screen bg-cover bg-center"
+        className="h-auto sm:h-screen bg-cover bg-center"
         style={{
           backgroundImage: `url(${imagePath + imageID?.backdrop_path})`,
         }}
       >
-        <div className="text-white grid grid-cols-2">
-          <div className=" flex justify-between ml-28 mt-48">
+        <div className="text-white grid grid-cols-1">
+          <div className=" flex flex-col sm:justify-between sm:ml-28 mt-32 sm:mt-48">
+            <h1 className="text-2xl font-bold pb-5 px-2 sm:hidden ">
+              {imageID.title || imageID.original_name}
+            </h1>
             {imageID && imageID.poster_path ? (
               <img
-                className="w-60 h-96 rounded-lg border-t-1 border-t-black shadow-md shadow-black"
+                className="w-screen sm:w-60 h-5xl sm:h-96 px-2 rounded-3xl sm:border-t-1 sm:border-t-black shadow-md shadow-black"
                 src={imagePath + imageID.poster_path || noImageIcon} //A "truthy" value means that it's not null, undefined, false, 0, NaN, or an empty string ("").
                 alt="image"
               />
             ) : (
-              <p>Loading...</p>
+              <p>Photo unavailable</p>
             )}
-            <div className="px-5 ml-10 w-auto h-auto rounded-xl shadow-md shadow-black bg-black opacity-50">
-              <h1 className="text-4xl font-bold ">
+            <div className="px-5 mt-4  sm:px-5 sm:ml-10 w-auto h-auto rounded-xl shadow-md shadow-black bg-black opacity-50">
+              <h1 className="text-4xl font-bold hidden sm:block md:block ">
                 {imageID.title || imageID.original_name}
               </h1>
               {movieInfo && (
@@ -166,15 +169,13 @@ function Details() {
               )}
             </div>
           </div>
-          <div className="ml-36 mt-48">
-            {movieKey&& !movieKey.match(/^[0-9]+$/) || tvKey ? (
+          <div className="sm:ml-36 sm:mt-48 hidden ">
+            {(movieKey && !movieKey.match(/^[0-9]+$/)) || tvKey ? (
               <iframe
                 className="rounded-lg border-2 border-amber-300  "
                 width="560"
                 height="350"
-                src={`https://www.youtube.com/embed/${
-                  movieKey || tvKey 
-                }`}
+                src={`https://www.youtube.com/embed/${movieKey || tvKey}`}
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
