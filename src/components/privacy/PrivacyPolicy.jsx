@@ -19,9 +19,9 @@ function PrivacyPolicy() {
     <div>
       <div className="h-auto text-white">
         <div className=" w-full h-56 flex items-center  text-white text-4xl border-b-2 border-b-gray-800">
-          <h1 className="mt-20 ml-32">Privacy Policy</h1>
+          <h1 className="mt-20 ml-5 sm:ml-32 text-nowrap">Privacy Policy</h1>
         </div>
-        <div className="p-20">
+        <div className="px-2 py-2 sm:p-20">
           <p>
             It is a long established fact that a reader will be distracted by
             the readable content of a page when looking at its layout. The point

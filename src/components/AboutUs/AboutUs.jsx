@@ -7,7 +7,7 @@ function AboutUs() {
         <div className=" w-full h-56 flex items-center  text-white text-4xl border-b-2 border-b-gray-800">
           <h1 className="mt-20 ml-32">About Us</h1>
         </div>
-        <div className="text-white text-wrap px-32 mt-16 border-b-2 border-b-gray-800 pb-24">
+        <div className="text-white text-wrap px-2 sm:px-32 mt-16 border-b-2 border-b-gray-800 pb-24">
           <h1 className="text-3xl font-bold text-white">
             Starlight Studios -
             <span className="font-medium">Best Place for Movies</span>
@@ -23,7 +23,7 @@ function AboutUs() {
             Dive into the world of cinematic magic and let yourself be
             transported to new realms of imagination and emotion.
           </p>
-          <div className="grid grid-cols-3 mt-10 gap-5 w-auto">
+          <div className="grid sm:grid-cols-3 mt-10 gap-5 w-auto">
             <div>
               <h1 className="text-xl">Ultra HD</h1>
               <p className="font-light mt-5">
@@ -76,10 +76,10 @@ function AboutUs() {
           </div>
         </div>
 
-        <div className="text-white text-wrap px-32 mt-16 pb-20">
-          <h1 className="text-3xl font-bold text-white">How it Works</h1>
+        <div className="text-white text-wrap px-2 sm:px-32 mt-16 pb-20">
+          <h1 className="text-3xl font-bold text-white">How it Works?</h1>
 
-          <div className="grid grid-cols-3 mt-10 gap-5 w-auto">
+          <div className="grid sm:grid-cols-3 mt-10 gap-5 w-auto">
             <div className="rounded-lg border-2 border-gray-700 p-5 hover:translate-0.5 duration-200">
               <span className="text-5xl font-black text-amber-400">01</span>
               <h1 className="pt-5  text-lg">create an account</h1>

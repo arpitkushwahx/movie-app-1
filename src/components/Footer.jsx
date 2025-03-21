@@ -53,7 +53,7 @@ function Footer() {
             onClick={handlePrivacy}
             className="hover:text-orange-700 duration-200 cursor-pointer text-sm"
           >
-            Privacy
+            Privacy policy
           </button>
 
           <button

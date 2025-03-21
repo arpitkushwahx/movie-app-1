@@ -90,7 +90,7 @@ function Carousel() {
               <img
                 src={imagePath + path[fourth]}
                 alt=""
-                className="rounded-2xl h-80 w-60 hover:opacity-60 duration-200 border-4 opacity-35 border-amber-300 hover:shadow-amber-300 shadow-md hover:-translate-y-1 hover:border-none "
+                className="hidden sm:block rounded-2xl h-80 w-60 hover:opacity-60 duration-200 border-4 opacity-35 border-amber-300 hover:shadow-amber-300 shadow-md hover:-translate-y-1 hover:border-none "
               />
             </Link>
             {/* <p>{arr[fourth].original_title || arr[fourth].original_name}</p> */}
@@ -102,7 +102,7 @@ function Carousel() {
               <img
                 src={imagePath + path[fifth]}
                 alt=""
-                 className="rounded-2xl h-64 w-60 hover:opacity-60 duration-200 border-4 opacity-35 border-amber-300 hover:shadow-amber-300 shadow-md hover:-translate-y-1 hover:border-none "
+                 className="hidden sm:block rounded-2xl h-64 w-60 hover:opacity-60 duration-200 border-4 opacity-35 border-amber-300 hover:shadow-amber-300 shadow-md hover:-translate-y-1 hover:border-none "
               />
             </Link>
             {/* <p>{arr[fifth].original_title || arr[fifth].original_name}</p> */}
