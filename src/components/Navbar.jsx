@@ -18,7 +18,7 @@ function Navbar() {
 
   return (
     <div className="z-3 px-0 fixed w-auto sm-w-auto md:w-full h-20 text-white border-b-2 border-b-gray-800 bg-gray-900">
-      <nav className="  grid place-items-center mx-auto max-w-full z-50 align-middle px-2 sm:px-6 lg:px-8 w-full sm:w-sm lg:w-auto">
+      <nav className="  grid place-items-center mx-auto max-w-full z-50 align-middle scroll-px-0 sm:px-6 lg:px-8 w-screen sm:w-sm lg:w-auto">
         <div className="container mx-auto flex justify-between items-center flex-col h-auto px-6 gap-2">
           <div className="transition-all">
             <h1

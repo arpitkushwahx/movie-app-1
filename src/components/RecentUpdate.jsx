@@ -45,7 +45,7 @@ function RecentUpdate() {
     <div>
       <div className="border-b-2 border-b-gray-800 px:20 md:px-32 ">
         <div className="text-white">
-          <h1 className="text-3xl text-nowrap md:text-4xl text-white ">Recently Updated</h1>
+          <h1 className=" text-nowrap text-4xl text-white px-2">Recently Updated</h1>
           <div className="my-7 flex flex-row gap-1 md:gap-7 justify-items-start">
             <button
               onClick={handleMovie}
@@ -70,7 +70,7 @@ function RecentUpdate() {
           </div>
         </div>
       </div>
-      <div className="border-b-2 border-b-gray-800 py-32 pt-7 px-32">
+      <div className="border-b-2 border-b-gray-800 py-32 pt-7 md:px-32">
         {/* 
         <Movie data={movie} />
         <Movie data={trendingMovie} /> */}

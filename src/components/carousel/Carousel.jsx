@@ -46,7 +46,7 @@ function Carousel() {
             <i className="fa-solid fa-arrow-right fa-2xl cursor-pointer hover:text-red-800 duration-200"></i>
           </button>
         </div>
-        <div className="duration-300 rounded-2xl grid grid-cols-5 sm:w-auto ">
+        <div className="duration-300 rounded-2xl grid-cols-3 grid md:grid-cols-5 sm:w-auto ">
           <div className="w-auto p-2  text-white">
             <Link to={`/details/${arr[first].id}`}>
               {" "}
