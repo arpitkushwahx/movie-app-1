@@ -22,7 +22,7 @@ function Navbar() {
         <div className="container mx-auto flex justify-between items-center flex-col h-auto px-6 gap-2">
           <div className="transition-all">
             <h1
-              className="font-bold text-2xl cursor-pointer text-nowrap"
+              className="font-bold text-2xl cursor-pointer text-nowra select-none"
               onClick={handleHome}
             >
               Starlight <span className="text-red-800">Studios</span>

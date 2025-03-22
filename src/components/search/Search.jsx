@@ -13,7 +13,7 @@ function Search() {
   return (
     <div>
       <div>
-        <div className="grid grid-cols-2 sm:grid-cols-4 h-auto sm:mx-40 text-white gap-2 pb-15 mx-2 ">
+        <div className="grid grid-cols-2 sm:grid-cols-4 h-auto sm:mx-40 text-white gap-2 pb-20 mx-3 ">
           {searchInfo.map((e) => (
             <div key={e.id} className=" h-50 sm:w-50 py-30 pb-40 ">
               <img
@@ -24,7 +24,7 @@ function Search() {
                 alt={e.poster_path?"":"Unavailable"}
                 className="rounded-lg hover:shadow-md hover:shadow-amber-300 hover:opacity-50 hover:-translate-y-1 duration-200 cursor-pointer border-2 border-red-700"
               />
-              <div><p>{e.title}</p></div>
+              <div className="mt-1"><p>{e.title}</p></div>
             </div>
           ))}
         </div>
