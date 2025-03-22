@@ -173,9 +173,9 @@ function Details() {
             {(movieKey && !movieKey.match(/^[0-9]+$/)) || tvKey ? (
               <>
                 <iframe
-                  className="rounded-lg border-2  border-amber-300 sm:hidden md:hidden my-5 mx-auto h-auto  "
+                  className="rounded-lg border-2  border-amber-300 sm:hidden md:hidden my-5 mx-auto   "
                   width="300"
-                  height="230"
+                  height="250"
                   src={`https://www.youtube.com/embed/${movieKey || tvKey}`}
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
