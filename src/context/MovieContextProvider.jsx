@@ -15,7 +15,7 @@ const MovieContextProvider = ({ children }) => {
 
   const API_KEY = "01cc0c43de395e0bd358bd4a24e76900";
   const imagePath = "https://image.tmdb.org/t/p/w1280";
-  const noImageIcon = "no image icon.jpg"
+  const noImageIcon = "public/noImageIcon.jpg"
   useEffect(() => {
     const fetchData = async (movieID) => {
       try {
