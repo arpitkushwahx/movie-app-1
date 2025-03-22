@@ -13,7 +13,7 @@ function Search() {
   return (
     <div>
       <div>
-        <div className="grid grid-cols-2 sm:grid-cols-4 h-auto sm:mx-40 text-white gap-2 pb-20 mx-3 ">
+        <div className="grid grid-cols-2 sm:grid-cols-4 h-auto sm:mx-40 text-white gap-2 mb-40 mx-3 ">
           {searchInfo.map((e) => (
             <div key={e.id} className=" h-50 sm:w-50 py-30 pb-40 ">
               <img
