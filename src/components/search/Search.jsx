@@ -24,7 +24,7 @@ function Search() {
                 alt={e.poster_path?"":"Unavailable"}
                 className="rounded-lg hover:shadow-md hover:shadow-amber-300 hover:opacity-50 hover:-translate-y-1 duration-200 cursor-pointer border-2 border-red-700"
               />
-              <div className="py-2"><p>{e.title}</p></div>
+              <div className="my-auto"><p>{e.title}</p></div>
             </div>
           ))}
         </div>
