@@ -169,25 +169,25 @@ function Details() {
               )}
             </div>
           </div>
-          <div className=" sm:ml-36 sm:mt-48 px-5 ">
+          <div className=" sm:ml-36 sm:mt-48  ">
             {(movieKey && !movieKey.match(/^[0-9]+$/)) || tvKey ? (
               <>
-              <iframe
-                className="rounded-lg border-2  border-amber-300 sm:hidden md:hidden my-5  "
-                width="450"
-                height="230"
-                src={`https://www.youtube.com/embed/${movieKey || tvKey}`}
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-              <iframe
-                className="rounded-lg border-2 border-amber-300 hidden sm:block md:block   "
-                width="560"
-                height="350"
-                src={`https://www.youtube.com/embed/${movieKey || tvKey}`}
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+                <iframe
+                  className="rounded-lg border-2  border-amber-300 sm:hidden md:hidden my-5 mx-auto h-auto  "
+                  width="300"
+                  height="230"
+                  src={`https://www.youtube.com/embed/${movieKey || tvKey}`}
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+                <iframe
+                  className="rounded-lg border-2 border-amber-300 hidden sm:block md:block   "
+                  width="560"
+                  height="350"
+                  src={`https://www.youtube.com/embed/${movieKey || tvKey}`}
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
               </>
             ) : (
               <iframe
