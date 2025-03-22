@@ -25,7 +25,7 @@ function Navbar() {
               className="font-bold text-2xl cursor-pointer text-nowrap"
               onClick={handleHome}
             >
-              Starlight <span className="text-red-800">Stdudios</span>
+              Starlight <span className="text-red-800">Studios</span>
             </h1>
           </div>
           <div className=" inline-flex ">

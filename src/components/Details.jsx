@@ -169,16 +169,26 @@ function Details() {
               )}
             </div>
           </div>
-          <div className="sm:ml-36 sm:mt-48 hidden ">
+          <div className=" sm:ml-36 sm:mt-48 ">
             {(movieKey && !movieKey.match(/^[0-9]+$/)) || tvKey ? (
+              <>
               <iframe
-                className="rounded-lg border-2 border-amber-300  "
+                className="rounded-lg border-2 border-amber-300 sm:hidden md:hidden mt-5  "
+                width="320"
+                height="300"
+                src={`https://www.youtube.com/embed/${movieKey || tvKey}`}
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+              <iframe
+                className="rounded-lg border-2 border-amber-300 hidden sm:block md:block   "
                 width="560"
                 height="350"
                 src={`https://www.youtube.com/embed/${movieKey || tvKey}`}
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
+              </>
             ) : (
               <iframe
                 className="rounded-lg border-2 border-amber-300  "
