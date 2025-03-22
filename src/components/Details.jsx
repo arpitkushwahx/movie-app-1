@@ -110,7 +110,7 @@ function Details() {
       >
         <div className="text-white grid grid-cols-1">
           <div className=" flex flex-col sm:justify-between sm:ml-28 mt-32 sm:mt-48">
-            <h1 className="text-2xl font-bold pb-5 px-2 sm:hidden ">
+            <h1 className="text-4xl font-bold pb-5 px-2 sm:hidden ">
               {imageID.title || imageID.original_name}
             </h1>
             {imageID && imageID.poster_path ? (
@@ -122,7 +122,7 @@ function Details() {
             ) : (
               <p>Photo unavailable</p>
             )}
-            <div className="px-5 mt-4  sm:px-5 sm:ml-10 w-auto h-auto rounded-xl shadow-md shadow-black bg-black opacity-50">
+            <div className="px-5 py-5 mx-2 mt-4  sm:px-5 sm:ml-10 w-auto h-auto rounded-2xl shadow-md shadow-black bg-black opacity-50">
               <h1 className="text-4xl font-bold hidden sm:block md:block ">
                 {imageID.title || imageID.original_name}
               </h1>
@@ -169,13 +169,13 @@ function Details() {
               )}
             </div>
           </div>
-          <div className=" sm:ml-36 sm:mt-48 ">
+          <div className=" sm:ml-36 sm:mt-48 px-5 ">
             {(movieKey && !movieKey.match(/^[0-9]+$/)) || tvKey ? (
               <>
               <iframe
-                className="rounded-lg border-2 border-amber-300 sm:hidden md:hidden mt-5  "
-                width="320"
-                height="300"
+                className="rounded-lg border-2  border-amber-300 sm:hidden md:hidden my-5  "
+                width="450"
+                height="230"
                 src={`https://www.youtube.com/embed/${movieKey || tvKey}`}
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
