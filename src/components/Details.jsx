@@ -190,14 +190,25 @@ function Details() {
                 ></iframe>
               </>
             ) : (
-              <iframe
-                className="rounded-lg border-2 border-amber-300  "
-                width="560"
-                height="350"
-                src="https://www.youtube.com/embed/CevxZvSJLk8?list=RDCevxZvSJLk8"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              ></iframe>
+              <>
+                {" "}
+                <iframe
+                  className="rounded-lg border-2  border-amber-300 sm:hidden md:hidden my-5 mx-auto"
+                  width="300"
+                  height="250"
+                  src="https://www.youtube.com/embed/CevxZvSJLk8?list=RDCevxZvSJLk8"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+                <iframe
+                  className="rounded-lg border-2 border-amber-300 hidden sm:block md:block   "
+                  width="560"
+                  height="350"
+                  src="https://www.youtube.com/embed/CevxZvSJLk8?list=RDCevxZvSJLk8"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                ></iframe>
+              </>
             )}
           </div>
         </div>
