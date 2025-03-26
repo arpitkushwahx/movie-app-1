@@ -18,11 +18,11 @@ function Navbar() {
 
   return (
     <div className="z-3 px-0 fixed w-auto sm-w-auto md:w-full h-20 text-white border-b-2 border-b-gray-800 bg-gray-900">
-      <nav className="  grid place-items-center mx-auto max-w-full z-50 align-middle scroll-px-0 sm:px-6 lg:px-8 w-screen sm:w-sm lg:w-auto">
-        <div className="container mx-auto flex justify-between items-center flex-col h-auto px-6 gap-2">
+      <nav className="  grid place-items-center mx-auto max-w-full z-50 align-middle scroll-px-0 sm:px-6 lg:px-8 w-screen lg:w-auto">
+        <div className="container mx-auto flex justify-between items-center flex-col sm:flex-row h-auto px-6 sm:px-2 gap-2 sm:gap-6 md:mt-5  ">
           <div className="transition-all">
             <h1
-              className="font-bold text-2xl cursor-pointer text-nowra select-none"
+              className="font-bold text-2xl cursor-pointer text-nowra md:text-nowrap select-none"
               onClick={handleHome}
             >
               Starlight <span className="text-red-800">Studios</span>
@@ -33,7 +33,7 @@ function Navbar() {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  `block py-2 pr-4 pl-3 duration-200 ${
+                  `block p pr-4 pl-3 duration-200 ${
                     isActive ? "text-orange-700" : "text-white"
                   } border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0 hidden sm:block`
                 }
@@ -41,7 +41,7 @@ function Navbar() {
                 <h1>Home</h1>
               </NavLink>
 
-              <div className="relative group hover:text-orange-700 hidden sm:block">
+              <div className="relative group hover:text-orange-700 hidden sm:block ">
                 <div className="  rounded-md cursor-pointer">Pages</div>
                 <div className="absolute hidden bg-gray-800 text-white  rounded-lg group-hover:block w-48 ">
                   <Link
@@ -50,7 +50,10 @@ function Navbar() {
                   >
                     About Us
                   </Link>
-                  <Link to="/Contact" className="block py-2 px-4 hover:bg-gray-600">
+                  <Link
+                    to="/Contact"
+                    className="block py-2 px-4 hover:bg-gray-600"
+                  >
                     Contact Us
                   </Link>
                   <Link to="/" className="block py-2 px-4 hover:bg-gray-600">
@@ -64,26 +67,30 @@ function Navbar() {
                   Options <i class="fa-solid fa-caret-down fa-sm"></i>
                 </div>
                 <div className=" absolute hidden group-hover:block bg-gray-800 w-48 rounded-lg">
-                  <Link to="/SignIn" className="block  hover:bg-gray-600 p-3">Login</Link>
+                  <Link to="/SignIn" className="block  hover:bg-gray-600 p-3">
+                    Login
+                  </Link>
                   <Link className="block  hover:bg-gray-600 p-3">Register</Link>
                 </div>
               </div>
             </div>
           </div>
-          <div className="mr-44">
-            <input
-              type="text"
-              placeholder="search movie..."
-              value={data}
-              onChange={(e) => setData(e.target.value)}
-              className="text-center rounded-xl  absolute"
-            />
+          <div className="mr-44 md:mr-5 flex flex-row justify-evenly w-auto">
+            <div>
+              <input
+                type="text"
+                placeholder="search movie..."
+                value={data}
+                onChange={(e) => setData(e.target.value)}
+                className="text-center rounded-xl sm:pl-5"
+              />
+            </div>
 
-            <span>
-              <button className=" cursor-pointer hover:text-red-400">
+            <div className="absolute ml-40">
+              <button className=" cursor-pointer hover:text-red-400  ">
                 <i class="fa-solid fa-magnifying-glass fa-sm"></i>
               </button>
-            </span>
+            </div>
           </div>
         </div>
       </nav>

@@ -37,16 +37,19 @@ function Carousel() {
     setFourth((prev) => (prev + 1) % arr.length);
     setFifth((prev) => (prev + 1) % arr.length);
   };
+  // setInterval(() => {
+  //   handleClick()
+  // }, 3000);
 
   return (
     <div>
-      <div className="w-auto text-white">
+      <div className="w-auto md:w-full text-white">
         <div className="flex justify-end mr-10 pb-5">
           <button onClick={handleClick}>
             <i className="fa-solid fa-arrow-right fa-2xl cursor-pointer hover:text-red-800 duration-200"></i>
           </button>
         </div>
-        <div className="duration-300 rounded-2xl grid-cols-3 grid md:grid-cols-5 sm:w-auto ">
+        <div className="duration-300 rounded-2xl grid-cols-3 grid sm:grid-cols-5  sm:w-auto ">
           <div className="w-auto p-2  text-white">
             <Link to={`/details/${arr[first].id}`}>
               {" "}
@@ -72,7 +75,7 @@ function Carousel() {
             {/* <p>{arr[second].original_title || arr[second].original_name}</p> */}
             
           </div>
-          <div className="w-auto p-2 ">
+          <div className="w-auto p-2 xl:mr-5">
             <Link to={`/details/${arr[third].id}`}>
               {" "}
               <img
@@ -84,7 +87,7 @@ function Carousel() {
             {/* <p>{arr[third].original_title || arr[third].original_name}</p> */}
           
           </div>
-          <div className="w-auto p-2 ">
+          <div className="w-auto p-2  ">
             <Link to={`/details/${arr[fourth].id}`}>
               {" "}
               <img

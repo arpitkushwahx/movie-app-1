@@ -1,6 +1,7 @@
 import React from "react";
 import { MovieContext } from "../../context/MovieContextProvider";
 import { useContext, useState } from "react";
+import Demo from "../demo/Demo";
 
 function PrivacyPolicy() {
   const { data, imagePath } = useContext(MovieContext);
@@ -59,6 +60,7 @@ function PrivacyPolicy() {
           </button>
           <img src={imagePath + poster} alt="image" className="h-50 w-50" />
         </div> */}
+        <Demo/>
       </div>
     </div>
   );

@@ -11,7 +11,7 @@ function ExpectedPremiere() {
           <h1 className="text-4xl">Expected Premiere</h1>
           
         </div>
-        <div className="grid xl:grid-cols-6 grid-cols-2 xs:grid-cols-1 md:grid-cols-3 max-w-full mt-5">
+        <div className="grid lg:grid-cols-6 grid-cols-2  sm:grid-cols-3 xs:grid-cols-1  max-w-full mt-5">
           {data.slice(12,18).map((e) => (
             <div className="p-4" key={e.id}>
              <Link to={`/Details/${e.id}`}> <img

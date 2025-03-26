@@ -25,18 +25,18 @@ function Footer() {
 
   return (
     <div>
-      <div className=" mx-auto sm:mx-24 mt-20 bg-gray-900 text-white border-t-2 border-t-gray-800 flex sm:justify-items-end max-w-full  justify-between py-10 px-2 sm:px-6 lg:px-8 h-auto sm:h-20 w-auto  flex-col">
-        <div className="sm:flex flex-col sm:items-center sm:gap-10 ">
-          <h1 className="font-bold text-4xl text-nowrap">
+      <div className=" mx-auto sm:mx-24 md:mx-0 mt-20 bg-gray-900 text-white border-t-2 border-t-gray-800 flex max-w-full  justify-between py-10 px-2 sm:px-6 lg:px-8 h-auto w-auto  flex-col md:flex-row ">
+        <div className="sm:flex flex-col sm:items-center sm:gap-10 md:flex-row ">
+          <h1 className="font-bold text-4xl md:text-2xl text-nowrap">
             Starlight <span className="text-red-800">Studios</span>
           </h1>
-          {/* <p className="text-xs pt-5">
+          <p className="text-xs text-nowrap pt-5 sm:pt-0 hidden md:block">
             © STARLIGHT STUDIOS, 2023—2028 <br />
             Created by
             <span className="font-medium"> Arpit Kushwah</span>
-          </p> */}
+          </p>
         </div>
-        <div className="text-[10px]   flex justify-evenly flex-row sm:flex sm:gap-5 h-sm sm:h-auto sm:w-auto">
+        <div className="text-[10px]   flex justify-start md:ml-20 gap-10 md:gap-5 flex-row sm:flex h-sm sm:h-auto sm:w-auto sm:justify-between md:justify-start lg:ml-60">
           <button
             onClick={handleAbout}
             className=" hover:text-orange-700 duration-200 cursor-pointer text-sm"
@@ -63,8 +63,8 @@ function Footer() {
             <i class="fa-solid fa-up-long"></i>
           </button>
         </div>
-        <div>
-          <p className="text-sm text-nowrap  ">
+        <div className="sm:mx-auto">
+          <p className="text-sm text-nowrap md:hidden  ">
             © STARLIGHT STUDIOS, 2023—2028 <br />
             Created by
             <span className="font-medium"> Arpit Kushwah</span>

@@ -70,7 +70,7 @@ function RecentUpdate() {
           </div>
         </div>
       </div>
-      <div className="border-b-2 border-b-gray-800 py-32 pt-7 md:px-32">
+      <div className="border-b-2 border-b-gray-800 py-32 pt-7 ">
         {/* 
         <Movie data={movie} />
         <Movie data={trendingMovie} /> */}

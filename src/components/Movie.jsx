@@ -8,7 +8,7 @@ function Movie({ data }) {
   
   return (
     <div>
-      <div className="text-white grid xl:grid-cols-6 grid-cols-3 sm:grid-cols-3 md:grid-cols-3 px-2 gap-y-3 gap-2 md:gap-5">
+      <div className="text-white grid xl:grid-cols-6 grid-cols-3 sm:grid-cols-3 md:grid-cols-4 px-2 gap-y-3 gap-2 md:gap-5">
         {data.slice(0,18).map((e) => (
           <div key={e.id} >
             {/* <p>{e.vote_average}</p> */}
