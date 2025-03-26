@@ -103,13 +103,13 @@ function Details() {
   return (
     <div>
       <div
-        className="h-auto sm:h-screen bg-cover bg-center"
+        className="h-auto sm:h-auto bg-cover bg-center"
         style={{
           backgroundImage: `url(${imagePath + imageID?.backdrop_path})`,
         }}
       >
         <div className="text-white grid grid-cols-1">
-          <div className=" flex flex-col sm:justify-between sm:ml-28 mt-32 sm:mt-48">
+          <div className=" flex flex-col sm:flex-row   mt-32 sm:mt-48">
             <h1 className="text-4xl font-bold pb-5 px-2 sm:hidden ">
               {imageID.title || imageID.original_name}
             </h1>
@@ -169,7 +169,7 @@ function Details() {
               )}
             </div>
           </div>
-          <div className=" sm:ml-36 sm:mt-48  ">
+          <div className=" sm:py-5 sm:flex sm:justify-center relative k ">
             {(movieKey && !movieKey.match(/^[0-9]+$/)) || tvKey ? (
               <>
                 <iframe
