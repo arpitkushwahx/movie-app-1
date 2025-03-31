@@ -107,7 +107,7 @@ function Contact() {
                     required
                   />
                 </div>
-                <button className="lg:w-full w-40 h-10  rounded-lg ml-11 mt-5 hover:border-b-2 hover:border-b-amber-300 hover:shadow-sm hover:shadow-amber-300  rounded-b-lg duration-100">
+                <button className="lg:w-full w-40 h-10  rounded-lg ml-11 sm:ml-auto mt-5 hover:border-b-2 hover:border-b-amber-300 hover:shadow-sm hover:shadow-amber-300  rounded-b-lg duration-100">
                   {isLoading ? "Submitting..." : "Submit"}
                 </button>
               </form>
@@ -129,18 +129,18 @@ function Contact() {
                   <i className="fa-brands fa-instagram fa-xl"></i>
                 </button>
               </Link>
-              <Link>
+              {/* <Link>
                 {" "}
                 <button className="hover:translate-0.5 duration-200 cursor-pointer">
                   <i className="fa-brands fa-facebook fa-xl"></i>
                 </button>
-              </Link>
+              </Link> */}
               <Link to="https://github.com/arpitkushwahx">
                 <button className="hover:translate-0.5 duration-200 cursor-pointer">
                   <i className="fa-brands fa-github fa-xl"></i>
                 </button>
               </Link>
-              <Link>
+              <Link to="https://linkedin.com/in/arpit-kushwah">
                 {" "}
                 <button className="hover:translate-0.5 duration-200 cursor-pointer">
                   <i className="fa-brands fa-linkedin fa-xl"></i>

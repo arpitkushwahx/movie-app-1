@@ -70,19 +70,19 @@ function Navbar() {
                   <Link to="/SignIn" className="block  hover:bg-gray-600 p-3">
                     Login
                   </Link>
-                  <Link className="block  hover:bg-gray-600 p-3">Register</Link>
+                  {/* <Link className="block  hover:bg-gray-600 p-3">Register</Link> */}
                 </div>
               </div>
             </div>
           </div>
-          <div className="mr-44 md:mr-5 flex flex-row justify-evenly w-auto">
+          <div className="md:mr-44  flex flex-row justify-evenly w-auto">
             <div>
               <input
                 type="text"
                 placeholder="search movie..."
                 value={data}
                 onChange={(e) => setData(e.target.value)}
-                className="text-center rounded-xl sm:pl-5"
+                className="pl-5 sm:text-center rounded-xl "
               />
             </div>
 

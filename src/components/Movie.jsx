@@ -8,8 +8,8 @@ function Movie({ data }) {
   
   return (
     <div>
-      <div className="text-white grid xl:grid-cols-6 grid-cols-3 sm:grid-cols-3 md:grid-cols-4 px-2 gap-y-3 gap-2 md:gap-5">
-        {data.slice(0,18).map((e) => (
+      <div className="text-white grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 px-2 md:mx-30 gap-y-3 gap-2 md:gap-5">
+        {data.map((e) => (
           <div key={e.id} >
             {/* <p>{e.vote_average}</p> */}
             
@@ -18,7 +18,7 @@ function Movie({ data }) {
               <img
                 src={imagePath + e.poster_path}
                 alt="image"
-                className="rounded-lg w-60 h-60 md:h-80 md:w-56 hover:opacity-60 duration-200 border-2 border-red-400 hover:shadow-amber-300 shadow-md hover:-translate-y-1  "
+                className="rounded-lg sm:w-60 sm:h-80 hover:opacity-60 duration-200 border-2 border-red-400 hover:shadow-amber-300 shadow-md hover:-translate-y-1  "
               />
             </Link>
             <div className="">
